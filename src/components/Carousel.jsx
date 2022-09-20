@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import ReactCSSTransitionGroup from "react-transition-group";
 
-class Carousel extends Component {
+export default class Carousel extends Component {
   state = {
     isArrowLeftHidden: true,
     isArrowRightHidden: true,
@@ -218,18 +218,18 @@ class Carousel extends Component {
         }}
         ref={(el) => (this.carousel = el)}
       >
-        <ReactCSSTransitionGroup
+        {/* <ReactCSSTransitionGroup
           transitionName="cardConfirmationPopup"
           transitionEnterTimeout={200}
           transitionLeaveTimeout={200}
-        >
-          {!this.state.isArrowLeftHidden && (
-            <button
-              className="carousel__arrow carousel__arrow--left"
-              onClick={this.onClickArrowLeft}
-            ></button>
-          )}
-        </ReactCSSTransitionGroup>
+        > */}
+        {!this.state.isArrowLeftHidden && (
+          <button
+            className="carousel__arrow carousel__arrow--left"
+            onClick={this.onClickArrowLeft}
+          ></button>
+        )}
+        {/* </ReactCSSTransitionGroup> */}
 
         <div
           className="carousel__children-box"
@@ -238,21 +238,19 @@ class Carousel extends Component {
           {this.props.children}
         </div>
 
-        <ReactCSSTransitionGroup
+        {/* <ReactCSSTransitionGroup
           transitionName="cardConfirmationPopup"
           transitionEnterTimeout={200}
           transitionLeaveTimeout={200}
-        >
-          {!this.state.isArrowRightHidden && (
-            <button
-              className="carousel__arrow carousel__arrow--right"
-              onClick={this.onClickArrowRight}
-            ></button>
-          )}
-        </ReactCSSTransitionGroup>
+        > */}
+        {!this.state.isArrowRightHidden && (
+          <button
+            className="carousel__arrow carousel__arrow--right"
+            onClick={this.onClickArrowRight}
+          ></button>
+        )}
+        {/* </ReactCSSTransitionGroup> */}
       </div>
     );
   }
 }
-
-export default Carousel;

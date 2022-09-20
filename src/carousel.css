@@ -1,0 +1,42 @@
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel__children-box {
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel__arrow {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 28px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  background-size: 43%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel__arrow:focus {
+  outline: none;
+}
+
+.carousel__arrow--left {
+  left: -25px;
+  z-index: 10;
+  box-shadow: 5px 0px 9px 9px #fff;
+  background-image: url(./assets/arrow-left.svg);
+}
+
+.carousel__arrow--right {
+  top: 0;
+  right: -23px;
+  box-shadow: -5px 0px 9px 9px #fff;
+  background-image: url(./assets/arrow-right.svg);
+}
