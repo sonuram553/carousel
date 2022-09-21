@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ReactCSSTransitionGroup from "react-transition-group";
 import "./carousel.css";
+import { CSSTransitionGroup } from "react-transition-group";
 
 export default class Carousel extends Component {
   state = {
@@ -229,18 +229,18 @@ export default class Carousel extends Component {
         }}
         ref={(el) => (this.carousel = el)}
       >
-        {/* <ReactCSSTransitionGroup
-          transitionName="cardConfirmationPopup"
-          transitionEnterTimeout={200}
-          transitionLeaveTimeout={200}
-        > */}
-        {!this.state.isArrowLeftHidden && (
-          <button
-            className="carousel__arrow carousel__arrow--left"
-            onClick={this.onClickArrowLeft}
-          ></button>
-        )}
-        {/* </ReactCSSTransitionGroup> */}
+        <CSSTransitionGroup
+          transitionName={"carousel-arrow"}
+          transitionEnterTimeout={1000}
+          transitionLeaveTimeout={1000}
+        >
+          {!this.state.isArrowLeftHidden && (
+            <button
+              className="carousel__arrow carousel__arrow--left"
+              onClick={this.onClickArrowLeft}
+            ></button>
+          )}
+        </CSSTransitionGroup>
 
         <div
           className="carousel__children-box"
@@ -249,18 +249,18 @@ export default class Carousel extends Component {
           {this.props.children}
         </div>
 
-        {/* <ReactCSSTransitionGroup
-          transitionName="cardConfirmationPopup"
-          transitionEnterTimeout={200}
-          transitionLeaveTimeout={200}
-        > */}
-        {!this.state.isArrowRightHidden && (
-          <button
-            className="carousel__arrow carousel__arrow--right"
-            onClick={this.onClickArrowRight}
-          ></button>
-        )}
-        {/* </ReactCSSTransitionGroup> */}
+        <CSSTransitionGroup
+          transitionName="carousel-arrow"
+          transitionEnterTimeout={1000}
+          transitionLeaveTimeout={1000}
+        >
+          {!this.state.isArrowRightHidden && (
+            <button
+              className="carousel__arrow carousel__arrow--right"
+              onClick={this.onClickArrowRight}
+            ></button>
+          )}
+        </CSSTransitionGroup>
       </div>
     );
   }

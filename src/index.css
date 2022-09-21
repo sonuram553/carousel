@@ -8,7 +8,7 @@ body {
 }
 
 .app {
-  margin: 20% auto;
+  margin: 15% auto 0;
   width: 50%;
   padding: 10px 0;
 }
@@ -24,6 +24,7 @@ body {
   flex-shrink: 0;
   background-color: #9cb4cc;
   height: 150px;
+  transition: margin 0.5s ease-in-out;
 }
 
 .item:last-child {
