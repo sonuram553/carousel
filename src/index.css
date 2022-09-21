@@ -3,6 +3,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #f2d7d9;
+}
+
+.app {
+  margin: 20% auto;
+  width: 50%;
+  padding: 10px 0;
+}
+
 .item {
   display: flex;
   justify-content: center;
@@ -12,7 +22,8 @@
   border-radius: 5px;
   margin-right: 10px;
   flex-shrink: 0;
-  background-color: lightblue;
+  background-color: #9cb4cc;
+  height: 150px;
 }
 
 .item:last-child {
@@ -31,9 +42,14 @@
   width: 100px;
 }
 
-.app {
-  border: 1px solid;
-  margin: 10% auto;
-  width: 350px;
-  padding: 10px 0;
+.item-200 {
+  width: 200px;
+}
+
+.item-300 {
+  width: 300px;
+}
+
+.item-400 {
+  width: 400px;
 }

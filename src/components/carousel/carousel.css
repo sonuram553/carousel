@@ -17,10 +17,12 @@
   height: 28px;
   border: none;
   cursor: pointer;
-  background-color: white;
+  background-color: transparent;
   background-size: 43%;
   background-position: center;
   background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .carousel__arrow:focus {
@@ -30,13 +32,10 @@
 .carousel__arrow--left {
   left: -25px;
   z-index: 10;
-  box-shadow: 5px 0px 9px 9px #fff;
   background-image: url(./assets/arrow-left.svg);
 }
 
 .carousel__arrow--right {
-  top: 0;
-  right: -23px;
-  box-shadow: -5px 0px 9px 9px #fff;
+  right: -25px;
   background-image: url(./assets/arrow-right.svg);
 }
