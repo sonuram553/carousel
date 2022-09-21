@@ -161,6 +161,8 @@ export default class Carousel extends Component {
   onClickArrowRight = () => {
     if (!this.firstChild || this.timeOutIdForArrowRight) return;
 
+    const { itemMarginRight } = this.props;
+
     this.timeOutIdForArrowRight = setTimeout(() => {
       this.timeOutIdForArrowRight = null;
     }, this.waitTime);
@@ -191,7 +193,8 @@ export default class Carousel extends Component {
 
     if (!this.isStartedFromLeft) {
       if (this.end === this.carouselChildren.length - 1)
-        marginLeft = firstChildMarginLeft - this.cumulativeWidth - 10;
+        marginLeft =
+          firstChildMarginLeft - this.cumulativeWidth - itemMarginRight;
       else marginLeft = firstChildMarginLeft - this.cumulativeWidth;
     } else if (this.end === this.carouselChildren.length - 1) {
       marginLeft =
