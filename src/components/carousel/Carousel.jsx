@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactCSSTransitionGroup from "react-transition-group";
+import "./carousel.css";
 
 export default class Carousel extends Component {
   state = {

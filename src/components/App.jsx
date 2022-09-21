@@ -1,4 +1,4 @@
-import Carousel from "./Carousel";
+import Carousel from "./carousel/Carousel";
 
 export default function App() {
   return (
