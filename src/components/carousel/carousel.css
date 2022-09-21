@@ -42,23 +42,19 @@
 
 /* Animation */
 .carousel__arrow-enter {
-  opacity: 0;
-  transform: scale(0.98);
+  opacity: 0.01;
 }
 
 .carousel__arrow-enter.carousel__arrow-enter-active {
   opacity: 1;
-  transform: scale(1);
-  transition: 1000s ease-in;
+  transition: opacity 300ms ease-in;
 }
 
 .carousel__arrow-leave {
   opacity: 1;
-  transform: scale(1);
 }
 
 .carousel__arrow-leave.carousel__arrow-leave-active {
-  opacity: 0;
-  transform: scale(0.98);
-  transition: 1000s ease-out;
+  opacity: 0.01;
+  transition: opacity 200ms ease-in;
 }

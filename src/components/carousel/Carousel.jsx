@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./carousel.css";
 import { CSSTransitionGroup } from "react-transition-group";
+import "./carousel.css";
 
 export default class Carousel extends Component {
   state = {
@@ -230,9 +230,9 @@ export default class Carousel extends Component {
         ref={(el) => (this.carousel = el)}
       >
         <CSSTransitionGroup
-          transitionName={"carousel-arrow"}
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={1000}
+          transitionName={"carousel__arrow"}
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={200}
         >
           {!this.state.isArrowLeftHidden && (
             <button
@@ -250,9 +250,9 @@ export default class Carousel extends Component {
         </div>
 
         <CSSTransitionGroup
-          transitionName="carousel-arrow"
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={1000}
+          transitionName="carousel__arrow"
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={200}
         >
           {!this.state.isArrowRightHidden && (
             <button
