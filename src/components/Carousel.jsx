@@ -57,11 +57,14 @@ export default class Carousel extends Component {
 
   isCarouselOverflow = () => {
     let cumulativeWidth = 0;
-    const marginRight = 10;
+    const { itemMarginRight, itemHorizontalBorderWidth } = this.props;
 
     for (let i = 0; i < this.carouselChildren.length; i++) {
       const child = this.carouselChildren[i];
-      const childWidth = ((child && child.clientWidth) || 0) + marginRight;
+      const childWidth =
+        ((child && child.clientWidth) || 0) +
+        itemMarginRight +
+        itemHorizontalBorderWidth;
       cumulativeWidth += childWidth;
     }
 
@@ -69,8 +72,9 @@ export default class Carousel extends Component {
   };
 
   setStartOrEnd = (startIndex, isMovingRight = true) => {
-    let marginRight;
     let i = startIndex;
+    let itemMarginRight;
+    const { itemHorizontalBorderWidth } = this.props;
     this.cumulativeWidth = 0;
 
     while (true) {
@@ -80,11 +84,14 @@ export default class Carousel extends Component {
         if (i < 0) break;
       }
 
-      if (i === this.carouselChildren.length - 1) marginRight = 0;
-      else marginRight = 10;
+      if (i === this.carouselChildren.length - 1) itemMarginRight = 0;
+      else itemMarginRight = this.props.itemMarginRight;
 
       const child = this.carouselChildren[i];
-      const childWidth = ((child && child.clientWidth) || 0) + marginRight;
+      const childWidth =
+        ((child && child.clientWidth) || 0) +
+        itemMarginRight +
+        itemHorizontalBorderWidth;
 
       if (this.cumulativeWidth + childWidth > this.carouselContentWidth) {
         break;
@@ -108,15 +115,15 @@ export default class Carousel extends Component {
       this.timeOutIdForArrowLeft = null;
     }, this.waitTime);
 
-    let marginRight = 10;
     let marginLeft = 0;
+    const { itemMarginRight } = this.props;
     let visiblePartOfPill = this.carouselContentWidth - this.cumulativeWidth;
     const firstChildMarginLeft = this.getMarginLeft(this.firstChild);
 
     if (this.end === this.carouselChildren.length - 1) {
       this.setStartOrEnd(this.carouselChildren.length - 1, false);
       visiblePartOfPill =
-        this.carouselContentWidth - this.cumulativeWidth - marginRight;
+        this.carouselContentWidth - this.cumulativeWidth - itemMarginRight;
       this.isStartedFromLeft = false;
     }
 
@@ -142,7 +149,7 @@ export default class Carousel extends Component {
         firstChildMarginLeft +
         this.cumulativeWidth -
         visiblePartOfPill -
-        marginRight;
+        itemMarginRight;
     } else {
       marginLeft =
         firstChildMarginLeft + this.carouselContentWidth - visiblePartOfPill;
